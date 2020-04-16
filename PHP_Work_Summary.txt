@@ -1,0 +1,64 @@
+My total experience with PHP comes from my freelancing work under my company label, my work at Upwork, Polar Design, and my work at D4 Creative Group.
+
+Red Robot Programming:
+Under this label I’ve worked on various websites, in addition to various smaller scripts and applications.
+
+Gridbright.com
+
+
+With gridbright.com I set up the site using wordpress as a base and using the bones theme as a starter theme. I set up the look and feel of the site using a design using the psd given to me by a designer and the layout using twitter bootstrap (otherwise known as bootstrap). I’ve written functionality for my client to edit portions of the site by creating custom fields within the wordpress database and connecting it to the front end via php shortcodes supported by wordpress.
+
+
+WildCrypto.com
+
+Wildcrypto.com is a website that is(was) a cyrptocurrency soft gambling site where people could play short flash games and win money in the form of the cyrptocoin token called “wildcrypto”. I set up the site using Silverstripe as a base and worked on the look and feel of the site with the owner directly. Also set up basic functionality (login and some small functionality for the control panel) for the website.
+
+DoubleExposureMusic.com
+Like with gridbright, I set up wordpress as a base, this time I was responsible for the design of the site and was responsible for setting up the look and feel. The php functionality for the site here comes from the interactions with the ajax functionality for loading in pages and the logic I wrote to load into page content dynamically in a way that was easier than the recommended way wordpress docs recommend.
+
+
+Under D4 Creative Group I worked on various wordpress, silverstripe and Drupal and expressionengine.
+
+Weinstein - weinsteinluxury.com
+
+With Weinstein I set up a lot of the functionality for the site utilizing the posting functionality of wordpress and taking those posts and filtering the content into the front end. For example, if there was a post that had the same name of a section in a page, the content of the post would get entered into that section of the site. I utilized various plugins for wordpress to rapidly introduce functionality into the site such as using an event calendar and other tools. I also helped the front end developer there with front end functionality when he got stuck on javascript.
+
+Pond Lehocky - www.pondlehocky.com
+
+With Pond Lehocky I set the site up using Silverstripe as a base, I wrote all of the functionality for the site for every section. I wrote a custom blog plugin, I wrote functionality to allow them to manage the lawyers that appear on our people.section, which in turn allows a user to click into their profile which was also editable on the back end. The navigation is editable and portions of the front page is( or was ) editable. The entire site is set up to modular and editable via the backend. I also assisted the front end developer with javascript.
+
+
+Veris Visalign - http://www.verisvisalign.com/
+
+I believe for this site I custom wrote an event calendar directly into the wordpress site code, taking advantage of bones advanced custom post feature.
+
+Provisional Paper - www.provisionpaperintl.com
+
+I set up the look and feel of the site and some basic functionality on the backend. The site was built using wordpress.
+
+Global Fleet Services - www.globalfleetservices.com
+This site was built using expression engine, it used to have public forms for the employees and users to interact on. The forms were built using Vanilla Forms, which were set up by myself. I also wrote a custom admin panel on the back end to interact with some database features in expressionengine because it was easier writing the panel then setting it up in expressonengine.
+
+Metrocast – www.metrocast.com
+Metrocast was set up in expressionengine, I worked with two other developers to set up the functionality for the site through expressionengine properly.
+
+Frontier - www.frontier.com
+Fronter was a basic site with a couple of pages in php, I wrote all the functionality for the site.
+
+SaniCare - www.sanicare.com
+SaniCare was a site built in wordpress. I set up portions of the look and feel and some javascript functionality here.
+
+Polar Design
+
+Under poplar design I worked on building extended functionality for various sites using Silverstripe and I was responsible for building the full stack experience for a website called mychocolatebars.com.The sites I’ve worked on here were
+
+FlowFitness
+HCat
+Unilife
+WestfordCat
+My Chocolate Bars
+
+Upwork.com
+Through upwork I worked on various tasks for clients either involving php, coldfusion or javascript. I’ve built headless admin panels for clients, I worked on a MVP for a B2B marketplace website for another client, I worked on a product that produced detailed reports based on their google, facebook and bing ads. I also worked with Polar Design through this platform.
+
+I am currently working with DigitalBrands.inc on a wordpress site for a client of theirs.

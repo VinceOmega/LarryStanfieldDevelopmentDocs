@@ -1,0 +1,132 @@
+Summary of my coldfusion development work history
+
+Junior Coldfusion Web Programmer @ American Law Institute Continuing Legal Education (ALI CLE) - Internship
+Coldfusion Web Developer @ SearchTec
+Coldfusion Application Developer @ travAlliancemedia
+Coldfusion Application Developer @ Bravo Business Media
+
+
+American Law Institute Continuing Legal Education (ALI CLE)
+	
+	I created two web applications when I was at the ALI CLE. The first application was a simple contact manager aka a rolodex. This was done in order to get me familiar with the coldfusion syntax and language as I learned cf from this job. The application was built using bootstrap, MYSQL, and coldfusion. After I left ALI CLE I recreated the application as an exercise to port it to other languages. You can find that code for this application here in my github here:
+https://github.com/VinceOmega/Contact-Manager
+
+Within the contact manager you could perform CRUD actions for contacts (aka created, delete, update and read contacts from the db.) You could also search the database for contacts based on information associated with the person and pagination. Fairly basic stuff.
+
+	I also wrote a much larger CRUD application to store and keep track of all software and hardware within ALI CLE. Utilized coldbox, coldfusion, bootstrap, javascript, and MYSQL to create the application. You could perform CRUD actions against the application to keep track of the PC equipment and varies attributes associated with said PC (hardware, software, users, etc…). Although I don’t have the code for this application nor did I replicate the software like I did with Contact Manager I did manage to remember the schema I wrote for the database of the application. Taking a look at the schema below should give you an idea of how complex the application actually was.
+
+	
+
+2.	SearchTec
+	
+	I worked as a contractor to help support bug fixes for their tax managing software. Outside of bug fixes, I wrote a small piece of software that would act as revision for their loans entered into the system. I utilized html, css, mysql, coldfusion and javascript in order to create the revision system. I was responsible for the ui/ux and the functionality of the application.
+
+3. 	Coldfusion Developer for travallianceMedia
+
+	As a coldfusion developer for travallianceMedia I mainly worked on the back end of the application. I was responsible for working on support tickets for the application as well creating new functionality and refactoring code. Here are some of the projects I worked on while at travallianceMedia
+
+Creating an antibot blocking and tracking system:
+I wrote a system that took advantage of the mod_anitbot module for the Helicon Ape IIS extension. mod_antibot worked within the .htaccess file enabled by the mod_rewrite module of Helicon Ape. How it worked was as follows: You added a condition (or a combination of conditions) for the mod antibot system to watch out for (e.g. a url that the bot has accessed) and the rule to execute based on the condition. You could name the conditions and pair them with ip address and the http host in order to create unique hashes for each instance.
+
+	This is how one rule would look within the .htaccess file:
+
+	<!--- Antibot engine have to be turned on before usage: --->
+	AntibotEngine 	On
+
+	<!--- Stop web index crawlers from killing us by preventing it from crawling hotels --->
+	<!---  Stop web index crawlers from accessing control-panel --->
+	AntibotCond %{REQUEST_URI} (/hotels-checkout\.html|/hotels-confirmation\.html|/hotels-details\.html|/hotels-search\.html|/common/sign-in\.html|/control-panel/.+|request-quote\.html|/send-to-a-friend\.html)
+	AntibotCond %{HTTP_USER_AGENT} (bingbot|yahoo|slurp|curl|script|seamonkey|MJ12bot|adsBot|site|lock|spider|agent|Image|BLEX|yandex|scout|jet|atomic|email|hunter|duck|sogou|exabot) [NC, O]
+	AntibotRule 1:crawl:%{REMOTE_ADDR}  1 per 1 minute [ban=1 hour,exec=C:\mod_antibot_logger\mod_antibot_logger.exe -app=ascodebase -rule=bots_hotels_forms]
+
+	Once those rules were executed you could pass the results to the console line, taking advantage of this having mod_antibot invoke a .bat file that would then take the results and pass it to a .json file. The file was formatted by an external library called libxml, this was an external C .dll. Once the results were written or appended to the .json file, they were ready to be analyzed..
+
+	In order for the files to be analyzed I wrote a small application that loaded the json files across the networked paths for each of the servers the .json files were hosted on (different .json files for development environments. Local, Development, Staging and Production.) The application was written in coldfusion and used javascript and an external js library called ALASQL to read and display the files on screen. You can find the code here : https://github.com/VinceOmega/json_panel
+
+b.	Social Media Center
+
+	My second project was the creation and integration of various social media apis into the Agent Studio platform.. I was responsible for building the UI/UX of the views to input users credentials for the various social platforms. I integrated Facebook’s Domain analytics (before it was depreciated) into the Agent Studio system, I also integrated Pinterest Rich Pin functionality in the website as well. I also enabled the entire Agent Studio subdomain sites to have their data collected under one Google Analytical instance as a part of this project.
+
+c.. 	Custom Slideshows
+
+	My third project required me to create both an interface and back end process that allowed for users to create custom slideshow carousels for the front end of their Agent Studio sites. Standard CRUD stuff, created views for listing the slides, editing the slides, creating the slides, did form validation and the whole nine yards.
+
+d.	Integrated Travefy intertary into Agent Studio
+
+When we were partnered with Travefy I wrote some functionality to embed their Travel itineraries into Agent Studio. We verified the user credentials using their API.
+
+e. 	Semi-Automated Subscription Wizard and Queuing System
+
+	My fourth project required me to create a wizard system that allowed for users to switch their subscription for the site on their own, as opposed to having to call the customer service department to process the request. It was semi-automated in the sense that it took the request but customer service still had to approve the process. This was a cross platform project that required me to work within both the Agent Studio platform and the internal CMS system ( a homegrown CMS platform built in coldfusion ) It required me to tap into some of the billing logic of our system and work it into the UI of the wizard within the Control Panel of Agent Studio. As well create a model that could predict an accurate cost for the switch prior to it actually happening. 
+
+For the queuing system, I wrote some CRUD application that would list all the subscription requests that came into the Agent Studio platform from various sites, give them a status (done or not done or something similar), and each request had a detail page that gave the customer service agent the details of the switch, how this would affect the site and the ability to notate the instance of the request prior to making the switch. Every approved request was time stamped with the customer service agent or developer who’ve approved of the process into the database.
+
+f. Billing improvement and refactor
+
+	This project grew out of a bug fix request. Initially I was required to prevent bad cards from being placed into the system. This grew into a huge project because as I got further into the request I was being asked to do more. What I ended up doing was creating a system that validated the credit cards by charging the card .15 cents. 
+
+If the charge didn’t go through then the card was not recorded into the system and rejected. In addition to this I had to prevent users from buying, refunding and then buying add-ons within a certain time interval, so we limited users to buying and refunding the same add-on once every 24 hours. If they bought the add-on and then refunded it the same day they would have to wait 24 hours to buy the same add-on again. 
+
+In addition to this I had to write functionality into the billing system to prevent the users from double billing themselves. In order to do this, I took advantage of the cflock function with in coldfusion and tied the lock to the user’s unique CFSESSIONID  and a set time interval of n seconds (n being a variable). 
+
+From this step lead to the discovery that some of the internal code that interfaced with auth.net’s api didn’t perform through error handling. Errors were not being recorded that could be recorded, duplicate authnications could be returned and a whole host of errors that I could spend another paragraph or two describing. So I was then tasked with refactoring the entire api interfacing logic so that it was more robust when it came to handling errors and reporting them. This lead to the billing system being a much more performant system. It was due to this refactor that we discovered around 1000 sites that had fallen out of the billing system and were not being billed. We put them back into the loop, thus recovering lost revenue from these sites.
+
+I utilized coldfusion, a bit of html and css for the UI/UX adjustments, and the Auth.net api for the refactor changes that were needed.
+
+g. The Control Panel Rework (and Refactor)
+	
+	This was by far the largest project I had to undertake (and it’s technically two projects), this required me to rework the control panel’s internal logic from the group up. I also had to assist our front end developer with the tasks of creating UI/UX and writing functionality javascript interactions based on the designs he made.
+
+Converting the control logic from a webparts focused invoke system to a more traditional index focused virtual page system.
+
+		The system prior to the rework worked as follows:
+		
+Each part of the application was assigned a guid, which was then registered into the database when then had to be tied to a rule defined by the CMS (which is another platform altogether.) This entire process was invoked by visiting a real .cfm file that was accessed with the .html file extension in the url (via .htaccess,). I personally this was too complicated and could be simplified by just having one physical file act as the index. 
+
+Then, through the index, create a routing system that calls the correct controller for whatever page we need. Using this system, we only need to work about two components, the index and the MVC model for the page. The old system required us to take into account the physical file for the page, the MVC model, the database, the rules with the CMS system, and proper registration within the web parts system.
+
+Thus this new allowed us to create new components faster.
+
+Creating a caching system for the static metadata within the Control Panel
+
+The Control Panel of the Agent Studio site stores information about what pages the user has access to, what descriptions for the pages are, and the hierarchy of the pages in relation to other pages and sections. In order to reduce the database load of the application I wrote a process within the application.cfc file to store the metadata in an object that will live in the application scope. Since the application scope for our application would expire every hour, this would mean the information that the application would normally page the database every page load for would only request every 1 hr. This freed up a lot of database requests when scaled to the 15000 users we had at the time.
+
+Creating a system to populate a href with auto updating non-fragile links
+
+I wrote a system utilizing the metadata now stored within the application scope that will generate the most update to date link for each virtual page within the Control Panel. For example, if I have a page called edit-tours that’s under the tours section of the control panel  the a href pointing to that page will generate the following link: //agentstudio.com/control-panel/tours/edit-tour, if we moved the edit-tours page to cruise-tours for some reason the link will automatically update to reflect this ( ///agentstudio.com/control-panel/cruise-tours/edit-tour. ). It is because of this system we no longer had to worry about breaking links whenever we moved or changed anything about the pages.
+
+Creating a token symbol system to replace certain tags or phrases within the database sourced paragraphs with actual information.
+	
+		I wrote functionality within the Control Panel to read a two part token that’s expressed as the following [ action::page ] and then parsed based on the action acting on the page named. For example, if I had link::dashboard within a paragraph saved in the databased for later output I could parse that text, find the token and then render a link based on the action “link” to the dashboard page. This system took advantage of the prior system that created non-fragile links so it too would also create auto updating a hrefs.
+
+Created a new growl alert system
+
+I rewrote the growl alert system to look more modern, be extendabled and keep track of the user throughout the application.
+
+Create form submission that submitted via ajax
+
+I rewrote the form submission to submit via ajax in order to give the application a single page application feel, it also falls back to normal form submission if the person has javascript disabled for some reason. This was done as a half measure towards a later update that was going to see the entire Control Panel act as a single page application.
+
+Standardized the way form submissions are handled with a logical structure I call the “hydra”
+	
+I came up with a method to standardized all form submissions into a logical structure that remains the same no matter what kind of situation you have to account for. 
+
+Wrote an entire suite of new js library to account for various spa like functionality for the UI/UX
+
+As you can see the Control Panel rework was not only a reworking of code, but of the entire concept of the control panel itself. After finishing this project I was later tasked with refactoring the code based on a code standard myself and the tech lead came up with during a meeting. This was the last major project I took on at travallianceMedia as I left for Bravo soon after.
+
+4. Coldfusion Developer at Bravo Business Media
+
+	My time here was short, but during that time I attempted to rebuild their control panel much in the same manner as I did at travallianceMedia but this project canceled at least 3 months into it. I then worked on smaller projects afterwards before being let go 9 months into my employment. The projects I did work on were as follows:
+
+Control Panel rework (canceled)
+Created new templates for a end cap creator called SPEXBuilder
+Wrote an algorithm that search through a database of 6 million to match against an imported report from the client’s Eclipse ERP POS system in order to be displayed on their website
+Wrote an import script for smaller batches of products into a site’s inventory table in the database
+Created a template system for putting together email blasts via the sendgrid api.
+
+
+The control panel I was worked on for Bravo Business Media was similar in design to the one that was made at travallianceMedia for Agent Studio. The code for that particular build is on my github here: ( https://github.com/VinceOmega/cfcmsframework_bravoadmin )
+
+
+
